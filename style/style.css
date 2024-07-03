@@ -5,7 +5,8 @@
 }
 
 .section-nav {
-  background-color: black;
+  position: fixed;
+  z-index: 800;
 }
 
 .container-nav {
@@ -18,12 +19,26 @@
 }
 
 .container {
+  padding-block: 15vw 8rem;
   padding-inline: 5.4vw;
+}
+
+.titem {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.titem p {
+  max-width: 15rem;
+  margin-top: 4rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   padding-block: 2.875rem;
   color: white;
 }
@@ -31,9 +46,24 @@
   display: flex;
   gap: 1.5rem;
 }
+.nav .logo {
+  display: flex;
+}
+.nav .menu {
+  display: flex;
+}
 
 video {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.divition_line {
+  margin-inline: 3.125rem;
+  border-top: 1px solid #000;
+}
+
+.three {
+  display: flex;
 }
