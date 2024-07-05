@@ -52,6 +52,11 @@ video {
   margin-bottom: 8rem;
   border-top: 1px solid #000;
 }
+.divition-line-tight {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  border-top: 1px solid #000;
+}
 
 .see-button {
   width: -moz-fit-content;
@@ -171,45 +176,86 @@ video {
 
 .total {
   display: flex;
+  flex: 1;
+}
+.total .text-ct {
+  flex: 1;
+}
+.total .text-ct h1 {
+  font-size: 15vh;
+}
+.total .text-ct p {
+  display: inline;
+}
+.total .video-2 {
+  flex: 1;
 }
 
-.row-1, .row-2, .row-3, .row-4, .row-5 {
+#row {
+  margin-block: 15rem;
+}
+#row h2 {
+  font-size: 3rem;
+}
+#row .title {
+  display: flex;
+  justify-content: space-between;
+}
+#row .row-1, #row .row-2, #row .row-3, #row .row-4, #row .row-5 {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
 }
-.row-1 img, .row-2 img, .row-3 img, .row-4 img, .row-5 img {
+#row .row-1 img, #row .row-2 img, #row .row-3 img, #row .row-4 img, #row .row-5 img {
   grid-row: 1/span 2;
 }
-.row-1 .text, .row-2 .text, .row-3 .text, .row-4 .text, .row-5 .text {
+#row .row-1 .text, #row .row-2 .text, #row .row-3 .text, #row .row-4 .text, #row .row-5 .text {
   display: flex;
   justify-content: space-between;
 }
-.row-1 .text figure, .row-2 .text figure, .row-3 .text figure, .row-4 .text figure, .row-5 .text figure {
+#row .row-1 .text figure, #row .row-2 .text figure, #row .row-3 .text figure, #row .row-4 .text figure, #row .row-5 .text figure {
   width: 5%;
 }
-.row-1 .press, .row-2 .press, .row-3 .press, .row-4 .press, .row-5 .press {
+#row .row-1 .press, #row .row-2 .press, #row .row-3 .press, #row .row-4 .press, #row .row-5 .press {
   align-self: flex-end;
-}
-
-.grid-row {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-}
-.grid-row figure {
-  grid-column: 1/span 3;
-}
-.grid-row .subtitle {
-  grid-column: 4/span 3;
-}
-.grid-row .info-1 {
-  grid-column: 4/span 1;
 }
 
 #footer-s {
   color: white;
   background-color: #252422;
   fill: white;
+}
+
+#footer-c {
+  padding-block: 7rem;
+}
+#footer-c .grid-row {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+}
+#footer-c .grid-row figure {
+  grid-column: 1/span 3;
+  width: 10%;
+}
+#footer-c .grid-row .subtitle {
+  grid-column: 4/span 3;
+  font-size: 2rem;
+}
+#footer-c .grid-row .info-1 {
+  grid-column: 4/span 1;
+}
+
+#behind-s {
+  font-size: 0.7rem;
+  color: grey;
+  background-color: black;
+}
+#behind-s #behind-c {
+  padding-block: 1lh;
+}
+#behind-s #behind-c .behind {
+  display: flex;
+  justify-content: space-between;
 }
