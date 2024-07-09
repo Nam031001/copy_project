@@ -27,6 +27,8 @@ body {
 }
 
 a {
+  width: -moz-fit-content;
+  width: fit-content;
   color: black;
   text-decoration: none;
 }
@@ -80,17 +82,21 @@ video {
 .see-button {
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0.5rem 1rem 0.3rem;
-  margin-top: 4rem;
+  padding: 0.5em 2.5rem;
+  font-size: 0.7rem;
   color: black;
-  border: 1.5px solid black;
+  border: 1px solid black;
   border-radius: 1.6rem;
+}
+.see-button:hover {
+  color: white;
+  background-color: #000;
 }
 
 .nav {
   display: grid;
-  grid-template-columns: 3fr 5fr 1fr;
-  gap: 40svh;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 20vw;
   width: 100%;
   padding-block: 2.875rem;
   color: white;
@@ -100,9 +106,30 @@ video {
   display: flex;
   gap: 3rem;
 }
+.nav .item-d {
+  position: relative;
+  display: inline-block;
+  padding: 3px;
+}
+.nav .item-d ::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  content: "";
+  background: rgb(255, 255, 255);
+  transition: all 0.3s ease-in-out;
+}
+.nav .item-d :hover::after {
+  width: 100%;
+}
 .nav .logo {
   width: 100%;
-  height: 100%;
+  max-width: 8rem;
+}
+.nav .menu {
+  text-align: right;
 }
 
 #two {
@@ -112,6 +139,18 @@ video {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  cursor: pointer;
+}
+#two .item-2 .adage:hover,
+#two .item-2 .webby:hover,
+#two .item-2 .campaign:hover {
+  text-decoration: underline;
+}
+#two .item-2 .adage:hover figure,
+#two .item-2 .webby:hover figure,
+#two .item-2 .campaign:hover figure {
+  transition: 0.2s;
+  transform: scale(1.05);
 }
 #two .item-2 p {
   max-width: 15rem;
@@ -202,13 +241,14 @@ video {
 .total {
   display: flex;
   flex: 1;
+  gap: 1rem;
 }
 .total .text-ct {
   flex: 1;
 }
 .total .text-ct h1 {
-  font-size: 13vh;
-  letter-spacing: -0.2rem;
+  font-size: 7svw;
+  letter-spacing: -0.1rem;
 }
 .total .video-2 {
   flex: 1;
@@ -222,7 +262,8 @@ video {
 }
 #row .title {
   display: flex;
-  justify-content: space-between;
+  place-content: flex-end space-between;
+  align-items: flex-end;
 }
 #row .row-1, #row .row-2, #row .row-3, #row .row-4, #row .row-5, #row .row-6, #row .row-7, #row .row-8, #row .row-9, #row .row-10, #row .row-11, #row .row-12 {
   display: grid;
@@ -238,8 +279,9 @@ video {
   justify-content: space-between;
   font-size: 2.4rem;
 }
-#row .row-1 .text figure, #row .row-2 .text figure, #row .row-3 .text figure, #row .row-4 .text figure, #row .row-5 .text figure, #row .row-6 .text figure, #row .row-7 .text figure, #row .row-8 .text figure, #row .row-9 .text figure, #row .row-10 .text figure, #row .row-11 .text figure, #row .row-12 .text figure {
-  width: 5%;
+#row .row-1 .text a, #row .row-2 .text a, #row .row-3 .text a, #row .row-4 .text a, #row .row-5 .text a, #row .row-6 .text a, #row .row-7 .text a, #row .row-8 .text a, #row .row-9 .text a, #row .row-10 .text a, #row .row-11 .text a, #row .row-12 .text a {
+  width: 100%;
+  max-width: 5%;
 }
 #row .row-1 .press, #row .row-2 .press, #row .row-3 .press, #row .row-4 .press, #row .row-5 .press, #row .row-6 .press, #row .row-7 .press, #row .row-8 .press, #row .row-9 .press, #row .row-10 .press, #row .row-11 .press, #row .row-12 .press {
   align-self: flex-end;
