@@ -115,8 +115,8 @@ video {
 
 .nav {
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  gap: 20vw;
+  grid-template-columns: 4fr 6fr 1fr;
+  gap: 18vw;
   width: 100%;
   padding-block: 2.875rem;
   color: white;
@@ -148,7 +148,7 @@ video {
 }
 .nav .logo {
   width: 100%;
-  max-width: 8rem;
+  max-width: 10rem;
 }
 .nav .menu {
   text-align: right;
@@ -399,7 +399,17 @@ video {
   padding: 1rem;
   background-color: #252422;
   border: none;
-  border-bottom: 1px white solid;
+}
+#footer-c .search button {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 4rem;
+  padding: 1rem 0;
+  background-color: #252422;
+  border: none;
+}
+#footer-c .search .line {
+  border: 1px white solid;
 }
 #footer-c .search .content {
   display: flex;
