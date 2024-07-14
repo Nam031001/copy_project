@@ -391,6 +391,9 @@ video {
 #footer-c .grid-row .info-1 {
   grid-column: 4/span 1;
 }
+#footer-c .grid-row .info-1 :hover, #footer-c .grid-row .info-2 :hover, #footer-c .grid-row .info-3 :hover {
+  text-decoration: underline;
+}
 #footer-c .search {
   grid-column: 1/span 2;
 }
