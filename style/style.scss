@@ -3,8 +3,11 @@
   margin: 0;
 }
 
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 body {
   font-family: Montserrat, sans-serif;
@@ -13,6 +16,7 @@ body {
   font-weight: weight;
   font-optical-sizing: auto;
   letter-spacing: -0.01rem;
+  white-space: normal;
   background-color: #f4f4f4;
 }
 
@@ -45,28 +49,34 @@ video {
 }
 
 // total property
-.section-nav {
-  position: fixed;
-  z-index: 800;
-}
-
-.container-nav {
-  padding-inline: 5.4vw;
-  text-transform: uppercase;
-}
 
 .section {
   padding-inline: 0;
   margin-inline: 0;
+
+  &-nav {
+    position: fixed;
+    z-index: 800;
+  }
 }
 
 .container {
   padding-inline: 5.4vw;
+
+  &_video {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-nav {
+    padding-inline: 5.4vw;
+    text-transform: uppercase;
+  }
 }
 
 .divition-line {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+  margin-top: 10vh;
+  margin-bottom: 12vh;
   border-top: 1px solid #000;
 
   &-sht {
@@ -89,7 +99,8 @@ video {
   padding: 0.5em 2.5rem;
 
   // margin-top: 4rem;
-  font-size: 0.7rem;
+  // font-size: 0.7rem;
+  font-size: 0.7vw;
   color: black;
   border: 1px solid black;
   border-radius: 1.6rem;
@@ -105,9 +116,9 @@ video {
 // 시작
 .underIcon {
   circle {
-    position: absolute;
-    top: 750%;
-    left: 2%;
+    position: fixed;
+    top: calc(100vh - 4rem);
+    left: 1%;
     width: 3rem;
     height: 3rem;
     overflow: auto;
@@ -132,12 +143,20 @@ video {
 }
 
 .nav {
-  display: grid;
-  grid-template-columns: 4fr 6fr 1fr;
-  gap: 18vw;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100vw - 10.8vw);
+  height: auto;
   padding-block: 2.875rem;
+  margin-inline: 5.4vw;
   color: white;
+  container-type: inline-size;
 
   svg {
     fill: white;
@@ -145,9 +164,12 @@ video {
 
   .item {
     display: flex;
-
-    // grid-column: 4 / span 3;
+    flex: 0 0 1rem;
+    flex-direction: row;
     gap: 3rem;
+    width: 100%;
+    height: 100%;
+    font-size: 0.8rem;
 
     &-d {
       position: relative;
@@ -172,13 +194,42 @@ video {
   }
 
   .logo {
-    // position: absolute;
-    width: 100%;
+    flex: 0 0 10rem;
+    min-width: 10rem;
     max-width: 10rem;
   }
 
   .menu {
+    flex: 0 0 2rem;
+    min-width: 2rem;
+    max-width: 2rem;
     text-align: right;
+
+    &-svg {
+      display: inline;
+    }
+
+    &-text {
+      display: none;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      text-align: left;
+    }
+  }
+
+  @media (width < 1280px) {
+    .item {
+      display: none;
+    }
+
+    .menu-svg {
+      display: none;
+    }
+
+    .menu-text {
+      display: inline;
+    }
   }
 }
 
@@ -192,6 +243,18 @@ video {
     .adage,
     .webby,
     .campaign {
+      align-self: center;
+
+      svg {
+        width: 75%;
+      }
+
+      figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       &:hover {
         text-decoration: underline;
 
@@ -203,10 +266,14 @@ video {
     }
 
     p {
-      max-width: 15rem;
+      max-width: 20rem;
       margin-top: 4rem;
-      font-size: 1rem;
+      font-size: 0.8rem;
       text-align: center;
+
+      @media (width < 1024px) {
+        font-size: 0.6rem;
+      }
     }
   }
 
@@ -215,10 +282,29 @@ video {
 
 .three {
   display: flex;
+  gap: 10vw;
   justify-content: space-between;
 
   .left {
-    max-width: 60%;
+    max-width: 45%;
+    font-size: 2rem;
+  }
+
+  .left-svg {
+    width: 50%;
+  }
+
+  @media (width < 1280px) {
+    .left-text {
+      font-size: 1rem;
+    }
+
+    figure {
+      width: 50%;
+      margin-top: 18%;
+
+      // transform: scale(1.5);
+    }
   }
 }
 
@@ -307,6 +393,12 @@ video {
     }
   }
 
+  .sub {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 6rem;
+  }
+
   h1 {
     font-size: 3rem;
   }
@@ -364,15 +456,15 @@ video {
     flex: 1;
 
     h1 {
-      font-size: 7svw;
+      font-size: 6vw;
 
       // line-height: 0.95;
       letter-spacing: -0.1rem;
     }
 
-    // p {
-    //   // display: inline;
-    // }
+    p {
+      margin-bottom: 6rem;
+    }
   }
 
   .video-2 {
@@ -381,7 +473,7 @@ video {
 }
 
 #row {
-  margin-block: 15rem;
+  margin-block: 10rem;
 
   h2 {
     font-size: 3rem;

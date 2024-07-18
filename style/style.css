@@ -3,6 +3,12 @@
   margin: 0;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: Montserrat, sans-serif;
   font-size: 1rem;
@@ -10,6 +16,7 @@ body {
   font-weight: weight;
   font-optical-sizing: auto;
   letter-spacing: -0.01rem;
+  white-space: normal;
   background-color: #f4f4f4;
 }
 
@@ -41,28 +48,30 @@ video {
   height: 100%;
 }
 
+.section {
+  padding-inline: 0;
+  margin-inline: 0;
+}
 .section-nav {
   position: fixed;
   z-index: 800;
 }
 
+.container {
+  padding-inline: 5.4vw;
+}
+.container_video {
+  width: 100%;
+  height: 100%;
+}
 .container-nav {
   padding-inline: 5.4vw;
   text-transform: uppercase;
 }
 
-.section {
-  padding-inline: 0;
-  margin-inline: 0;
-}
-
-.container {
-  padding-inline: 5.4vw;
-}
-
 .divition-line {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+  margin-top: 10vh;
+  margin-bottom: 12vh;
   border-top: 1px solid #000;
 }
 .divition-line-sht {
@@ -81,7 +90,7 @@ video {
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.5em 2.5rem;
-  font-size: 0.7rem;
+  font-size: 0.7vw;
   color: black;
   border: 1px solid black;
   border-radius: 1.6rem;
@@ -92,9 +101,9 @@ video {
 }
 
 .underIcon circle {
-  position: absolute;
-  top: 750%;
-  left: 2%;
+  position: fixed;
+  top: calc(100vh - 4rem);
+  left: 1%;
   width: 3rem;
   height: 3rem;
   overflow: auto;
@@ -114,19 +123,32 @@ video {
 }
 
 .nav {
-  display: grid;
-  grid-template-columns: 4fr 6fr 1fr;
-  gap: 18vw;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 89.2vw;
+  height: auto;
   padding-block: 2.875rem;
+  margin-inline: 5.4vw;
   color: white;
+  container-type: inline-size;
 }
 .nav svg {
   fill: white;
 }
 .nav .item {
   display: flex;
+  flex: 0 0 1rem;
+  flex-direction: row;
   gap: 3rem;
+  width: 100%;
+  height: 100%;
+  font-size: 0.8rem;
 }
 .nav .item-d {
   position: relative;
@@ -147,11 +169,36 @@ video {
   width: 100%;
 }
 .nav .logo {
-  width: 100%;
+  flex: 0 0 10rem;
+  min-width: 10rem;
   max-width: 10rem;
 }
 .nav .menu {
+  flex: 0 0 2rem;
+  min-width: 2rem;
+  max-width: 2rem;
   text-align: right;
+}
+.nav .menu-svg {
+  display: inline;
+}
+.nav .menu-text {
+  display: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+}
+@media (width < 1280px) {
+  .nav .item {
+    display: none;
+  }
+  .nav .menu-svg {
+    display: none;
+  }
+  .nav .menu-text {
+    display: inline;
+  }
 }
 
 #two {
@@ -162,6 +209,23 @@ video {
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
+}
+#two .item-2 .adage,
+#two .item-2 .webby,
+#two .item-2 .campaign {
+  align-self: center;
+}
+#two .item-2 .adage svg,
+#two .item-2 .webby svg,
+#two .item-2 .campaign svg {
+  width: 75%;
+}
+#two .item-2 .adage figure,
+#two .item-2 .webby figure,
+#two .item-2 .campaign figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #two .item-2 .adage:hover,
 #two .item-2 .webby:hover,
@@ -175,18 +239,37 @@ video {
   transform: scale(1.05);
 }
 #two .item-2 p {
-  max-width: 15rem;
+  max-width: 20rem;
   margin-top: 4rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
+}
+@media (width < 1024px) {
+  #two .item-2 p {
+    font-size: 0.6rem;
+  }
 }
 
 .three {
   display: flex;
+  gap: 10vw;
   justify-content: space-between;
 }
 .three .left {
-  max-width: 60%;
+  max-width: 45%;
+  font-size: 2rem;
+}
+.three .left-svg {
+  width: 50%;
+}
+@media (width < 1280px) {
+  .three .left-text {
+    font-size: 1rem;
+  }
+  .three figure {
+    width: 50%;
+    margin-top: 18%;
+  }
 }
 
 #img-c {
@@ -259,6 +342,11 @@ video {
   margin-bottom: 8rem;
   white-space: normal;
 }
+#google .sub {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 6rem;
+}
 #google h1 {
   font-size: 3rem;
 }
@@ -297,15 +385,18 @@ video {
   flex: 1;
 }
 .total .text-ct h1 {
-  font-size: 7svw;
+  font-size: 6vw;
   letter-spacing: -0.1rem;
+}
+.total .text-ct p {
+  margin-bottom: 6rem;
 }
 .total .video-2 {
   flex: 1;
 }
 
 #row {
-  margin-block: 15rem;
+  margin-block: 10rem;
 }
 #row h2 {
   font-size: 3rem;
