@@ -423,24 +423,39 @@ video {
   white-space: nowrap;
 }
 #google .google .title img {
-  width: 40%;
+  width: 46%;
 }
 #google .kfc {
   white-space: nowrap;
 }
 #google .kfc .title img {
-  width: 40%;
-}
-#google .wilson .title img {
   width: 46%;
 }
+#google .wilson .title img {
+  width: 52%;
+}
 #google .at .title img {
-  width: 19%;
+  width: 13%;
 }
 #google .patagonia .title img {
-  width: 60%;
+  width: 66%;
 }
 @media (width < 1280px) {
+  #google .google .title img {
+    width: 40%;
+  }
+  #google .kfc .title img {
+    width: 40%;
+  }
+  #google .wilson .title img {
+    width: 46%;
+  }
+  #google .at .title img {
+    width: 10%;
+  }
+  #google .patagonia .title img {
+    width: 60%;
+  }
   #google .divition-line-sht {
     margin-bottom: 3rem;
   }
@@ -473,8 +488,23 @@ video {
   }
 }
 @media (width < 1024px) {
-  #google img {
-    max-width: calc(16vw + 4rem);
+  #google .google .title img {
+    width: 35%;
+  }
+  #google .kfc {
+    white-space: nowrap;
+  }
+  #google .kfc .title img {
+    width: 35%;
+  }
+  #google .wilson .title img {
+    width: 41%;
+  }
+  #google .at .title img {
+    width: 9%;
+  }
+  #google .patagonia .title img {
+    width: 55%;
   }
   #google h1 {
     max-width: 10rem;

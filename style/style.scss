@@ -496,7 +496,7 @@ video {
 
     .title {
       img {
-        width: 40%;
+        width: 46%;
       }
     }
   }
@@ -506,30 +506,64 @@ video {
 
     .title {
       img {
-        width: 40%;
+        width: 46%;
       }
     }
   }
 
   .wilson .title {
     img {
-      width: 46%;
+      width: 52%;
     }
   }
 
   .at .title {
     img {
-      width: 19%;
+      width: 13%;
     }
   }
 
   .patagonia .title {
     img {
-      width: 60%;
+      width: 66%;
     }
   }
 
   @media (width < 1280px) {
+    .google {
+      .title {
+        img {
+          width: 40%;
+        }
+      }
+    }
+
+    .kfc {
+      .title {
+        img {
+          width: 40%;
+        }
+      }
+    }
+
+    .wilson .title {
+      img {
+        width: 46%;
+      }
+    }
+
+    .at .title {
+      img {
+        width: 10%;
+      }
+    }
+
+    .patagonia .title {
+      img {
+        width: 60%;
+      }
+    }
+
     .divition-line-sht {
       margin-bottom: 3rem;
     }
@@ -569,8 +603,40 @@ video {
   }
 
   @media (width < 1024px) {
-    img {
-      max-width: calc(16vw + 4rem);
+    .google {
+      .title {
+        img {
+          width: 35%;
+        }
+      }
+    }
+
+    .kfc {
+      white-space: nowrap;
+
+      .title {
+        img {
+          width: 35%;
+        }
+      }
+    }
+
+    .wilson .title {
+      img {
+        width: 41%;
+      }
+    }
+
+    .at .title {
+      img {
+        width: 9%;
+      }
+    }
+
+    .patagonia .title {
+      img {
+        width: 55%;
+      }
     }
 
     h1 {
