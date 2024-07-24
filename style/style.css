@@ -90,6 +90,11 @@ video {
   margin-bottom: 1rem;
   border-top: 1px solid #000;
 }
+.divition-line-g {
+  margin-top: 5vw;
+  margin-bottom: calc(2rem + 5vh);
+  border-top: 1px solid black;
+}
 
 .see-button {
   width: -moz-fit-content;
@@ -394,14 +399,14 @@ video {
 }
 #google .firm-main .text {
   width: 18rem;
-  margin-bottom: 8rem;
+  margin-bottom: 6vw;
   font-size: 1rem;
   white-space: normal;
 }
 #google .sub {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 6rem;
+  margin-bottom: 7vw;
 }
 #google .sub .circle {
   grid-column: 4/span 1;
@@ -444,7 +449,7 @@ video {
   }
   #google .firm-main .text {
     width: 23rem;
-    margin-bottom: 8rem;
+    margin-bottom: 6vw;
     font-size: 0.8rem;
     font-weight: 500;
     white-space: normal;
@@ -468,12 +473,20 @@ video {
   }
 }
 @media (width < 1024px) {
+  #google img {
+    max-width: calc(16vw + 4rem);
+  }
+  #google h1 {
+    max-width: 10rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
   #google .firm-main {
     gap: 2rem;
   }
   #google .text {
     width: 27rem;
-    margin-bottom: 8rem;
+    margin-bottom: 6vw;
     font-size: 0.8rem;
     font-weight: 500;
     white-space: normal;
